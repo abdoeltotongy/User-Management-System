@@ -6,7 +6,9 @@ First, clone this repository, install the dependencies, and setup your .env file
 
 
 https://github.com/abdoeltotongy/User-Management-System.git
+
 composer install
+
 cp .env.example .env
 
 
