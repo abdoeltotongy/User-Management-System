@@ -12,6 +12,10 @@ composer install
 cp .env.example .env
 
 
+
+
+
+
  
 
 Then create the necessary database.
