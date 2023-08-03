@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Exception;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
@@ -15,7 +16,10 @@ class AdminController extends Controller
         return view('dashboard',compact('users'));
     }
 
-
+    public function store(UserRequest $request){
+        User::create($request->validated());
+        return back()->with('success', 'Account Added Successfully');
+    }
 
     public function delete(User $user, Request $request)
     {

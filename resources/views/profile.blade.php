@@ -65,25 +65,10 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    {{--
-                                        @if (Auth::user()->image == null)
-                                            <td style="width: 100px">
-                                                <img src="{{ asset('images/avatar.png') }}">
-                                            </td>
-                                        @else
-                                            <td style="width: 100px">
-                                                <img src="{{ Auth::user()->image }}">
-                                            </td>
-                                            @endif --}}
 
-
-                                    <td>
-                                        <img {{ Auth::user()->image }} ? src="{{ Auth::user()->image }}" :
-                                            src="{{ asset('images/avatar.png') }}">
+                                    <td style="width: 100px">
+                                        {!! Auth::user()->image ? '<img src="' . asset(Auth::user()->image) . '">' : ' ' !!}
                                     </td>
-
-
-
 
                                     <td>
                                         {{ Auth::user()->name }}

@@ -24,7 +24,6 @@ Route::get('/', function () {
 Route::middleware(['auth','verified'])->group(function () {
     Route::get('/profile', [UserController::class, 'index'])->name('profile');
 
-    Route::post('profile', [UserController::class, 'store'])->name('profile');
     Route::post('profile/update', [UserController::class, 'update'])->name('profile.update');
     Route::get('profile/delete/{profile}', [UserController::class, 'delete']);
 
@@ -35,6 +34,7 @@ Route::middleware(['auth','verified'])->group(function () {
 
 
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+    Route::post('user', [AdminController::class, 'store'])->name('user.store');
     Route::get('user/delete/{user}', [AdminController::class, 'delete'])->name('user.delete');
 });
 
